@@ -1,0 +1,32 @@
+{
+  "name": "teslagame",
+  "version": "1.0.0",
+  "description": "NodeJS ve Telegraf kütübhanesi kullanılarak yapılmış basit yaş tahmin oyun botu",
+  "main": "botTesla.js",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "dotenv": "^16.0.1",
+    "minimist": "^1.2.6",
+    "module-alias": "^2.2.2",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.7",
+    "sandwich-stream": "^2.0.2",
+    "telegraf": "^3.39.0",
+    "tr46": "^0.0.3",
+    "typegram": "^3.9.1",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "husnuehedov",
+    "tahmin",
+    "telegram",
+    "bot",
+    "oyun"
+  ],
+  "author": "t.me/HusnuEhedov",
+  "license": "ISC"
+}
