@@ -8,13 +8,13 @@ const ID_BOT = process.env.ID_BOT || '';
 
 
 const config = require("./config")
-const db = require("./db")
+const db = require("./veritabani/db")
 const fs = require("fs")
 const {randomResim, Degisken, ArtiEksi, HusnuEhedov, kullaniciProfil} = require("./eklenti")
 const telegram = new Telegram(process.env.TOKEN)
 const bot = new Telegraf(process.env.TOKEN)
 const path = require("path")
-const dbfile = path.resolve(__dirname, "./db.json")
+const dbfile = path.resolve(__dirname, "./veritabani/db.json")
 
 
 let oyunDurumuHusnuEhedov = {}
