@@ -1,3 +1,8 @@
+////////////////////////////////////////
+// Başka github hesabına yükləməy olmaz
+// Reponu öz adına çıxaran peysərdi...!!!
+
+
 require("dotenv").config();
 
 const { Telegraf, Telegram } = require("telegraf")
