@@ -24,7 +24,7 @@ Eski Alt Versiyon Projesi GitHub'da Kullanıcılara Açık Sunuldu.</b>
 
 ### 🔹 Kolay Heroku Kurulum
   
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)  
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sirincay/TeslaGameV1)  
  <i>Deploy Sonrası Yapılması Gerekenler:</i><br/>
       <i>web npm start butonu kapatın</i><br/>
      <img src="img/heroku1.jpg" alt="heroku" width="200" height="150"><br/>
