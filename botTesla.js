@@ -80,7 +80,7 @@ const OyunYaratHusnuEhedov = chatId => {
 }
 
 const ozelMesaj = isGroup => Degisken(`
-    *✅ Hoş Geldin,Ben MytGame Oyun Mağazası,👤\nTelegram oyun botuyum🤖*
+    *✅ Hoş Geldin,Ben MytGame Oyun Mağazası\nZamanınızı eğlenceli hale getirimek için Telegram oyun botuyum🤖*
     ${isGroup ? "" : "\n*Temel komutların listesi için /yardim*"}
 `)
 
