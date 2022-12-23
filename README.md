@@ -73,7 +73,7 @@ Tüm hakları saklıdır!
 
 ## İletişim
 
-Telegram- [@HusnuEhedov](https://t.me/husnuehedov)
+Telegram- [@HusnuEhedov](https://t.me/insidecore)
 
 Project Link: [https://github.com/sirincay/TeslaGameV1](https://github.com/sirincay/TeslaGameV1)
 
