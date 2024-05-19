@@ -21,7 +21,7 @@ const path = require("path")
 const dbfile = path.resolve(__dirname, "./veritabani/db.json")
 
 
-let oyunDurumuHusnuEhedov = {}
+let oyunDurumu = {}
 
 /// /// /// /// /// /// ///  <!-- VERİTABANI SUPERGROUP(-100) İD ÇEKME --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
 
@@ -67,15 +67,15 @@ bot.command("grupsayi", async (ctx) => {
 
 /// /// /// /// /// /// ///  <!-- CONST SABİT TANIMLANANLAR --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
 
-const OyunYaratHusnuEhedov = chatId => {
-	oyunDurumuHusnuEhedov[chatId] = {
+const OyunYarat = chatId => {
+	oyunDurumu[chatId] = {
 		timeouts: {},
 		guessMessage: null,
 		currentRound: null,
 		currentTime: 0, 
 		answersOrder: []
 	}
-	return oyunDurumuHusnuEhedov[chatId]
+	return oyunDurumu[chatId]
 }
 
 const ozelMesaj = isGroup => Degisken(`
@@ -93,21 +93,21 @@ const YasOyunBaslat = () => {  // OYUN RESİM ALMASI GEREK DOSYA KONUM
 		photo: `${imagePath}/${fimeName}`
 	}
 }
-const NesneYenileHusnuEhedov = (obj, f) => {
+const NesneYenile = (obj, f) => {
 	let index = 0
 	for (let key in obj) {
 		f(key, obj[key], index)
 		index++
 	}
 }
-const dbChatAlHusnuEhedov = chatId => {  // CHAT ID ALMASI
+const dbChatAl = chatId => {  // CHAT ID ALMASI
 	let data = {
 		isPlaying: true,
 		members: {}
 	}
 	db.insert(chatId, data)
 }
-const dbUserAlHusnuEhedov = firstName => {  // KULLANICI ADI, PUAN ALMASI
+const dbUserAl = firstName => {  // KULLANICI ADI, PUAN ALMASI
 	return {
 		firstName: firstName,
 		isPlaying: true,
@@ -119,7 +119,7 @@ const dbUserAlHusnuEhedov = firstName => {  // KULLANICI ADI, PUAN ALMASI
 const getChat = chatId => {
 	return db.get(chatId)
 }
-const OyunDurdurHusnuEhedov = (ctx, chatId) => {
+const OyunDurdur = (ctx, chatId) => {
 	let chat = getChat(chatId)
 	if (chat && chat.isPlaying) {
 		if (oyunDurumuHusnuEhedov[chatId] && oyunDurumuHusnuEhedov[chatId].timeouts) {
@@ -156,7 +156,7 @@ const OyunDurdurHusnuEhedov = (ctx, chatId) => {
 		ctx.reply("🆘 Oyun başlamadı... 🙅🏻\nOyunu Başlat ➡️  /game")
 	}
 }
-const RaundMesajHusnuEhedov = (chatId, round, time) => {
+const RaundMesaj = (chatId, round, time) => {
 	let chat = getChat(chatId)
 	let answers = []
 	NesneYenileHusnuEhedov(chat.members, (memberId, member, memberIndex) => {
@@ -181,8 +181,8 @@ const RaundMesajHusnuEhedov = (chatId, round, time) => {
 		${"◾️".repeat(time)}${"▫️".repeat(config.emojiSaniye - time)}
 	`)
 }
-const OyunHusnuEhedov = (ctx, chatId) => {
-	let gameState = OyunYaratHusnuEhedov(chatId)
+const Oyun = (ctx, chatId) => {
+	let gameState = OyunYarat(chatId)
 	let startRound = async round => {
 		let person = YasOyunBaslat()
 		let rightAnswer = person.age
@@ -203,7 +203,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 				ctx.chat.id,
 				guessMessage.message_id,
 				null,
-				RaundMesajHusnuEhedov(chatId, round, time),
+				RaundMesaj(chatId, round, time),
 				{
 					parse_mode: "Markdown"
 				}
@@ -215,7 +215,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 		gameState.timeouts.round = setTimeout(() => {
 			let chat = getChat(chatId)
 			let top = []
-			NesneYenileHusnuEhedov(chat.members, (memberId, member, memberIndex) => {
+			NesneYenile(chat.members, (memberId, member, memberIndex) => {
 				if (member.isPlaying) {
 					let addScore = member.answer === null ? 0 : rightAnswer - Math.abs(rightAnswer - member.answer)
 					chat.members[memberId].gameScore += addScore
@@ -234,7 +234,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 			if (!top.every(member => member.answer === null)) {
 				ctx.replyWithMarkdown(
 					Degisken(`
-						✅ Fotoğraftaki Kişi: *${rightAnswer} ${HusnuEhedov(rightAnswer, "yaşında", "yaşında", "yaşında")}*\n*⭐️Puan Kazananlar:*
+						✅ Fotoğraftaki Kişi: *${rightAnswer} $(rightAnswer, "yaşında", "yaşında", "yaşında")}*\n*⭐️Puan Kazananlar:*
 
 						${top.sort((a, b) => b.addScore - a.addScore).map((member, index) => `${["🥇","🎖","🏅"][index] || "🔸"} ${index + 1}. *${member.firstName}*: ${ArtiEksi(member.addScore)}`).join("\n")}
 					`),
@@ -245,13 +245,13 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 			}
 			else {
 				ctx.reply("kendimi yırtıyorum burada, sen benimle oynamak istemiyorsun🥺❕")
-				OyunDurdurHusnuEhedov(ctx, chatId)
+				OyunDurdur(ctx, chatId)
 				return
 			}
 
 			if (round === process.env.RAUND_SAYI - 1) {
 				gameState.timeouts.OyunDurdurHusnuEhedov = setTimeout(() => {
-					OyunDurdurHusnuEhedov(ctx, chatId)
+					OyunDurdur(ctx, chatId)
 				}, 1000)
 			}
 			else {
@@ -291,10 +291,10 @@ bot.command("game", (ctx) => {
 			}
 		}
 		else {
-			dbChatAlHusnuEhedov(chatId)
+			dbChatAl(chatId)
 		}
 		ctx.replyWithHTML(`<b><a href="tg://user?id=${ctx.from.id}">${ctx.from.first_name}</a> Tarafından,\n\nYaş Tahmin Oyunu Başladı 🎉</b>`)
-		OyunHusnuEhedov(ctx, chatId)
+		Oyun(ctx, chatId)
 	}
 	else {
 		ctx.reply("🛑 Bu komut gruplar için geçerli kuzum")
@@ -307,7 +307,7 @@ bot.command("stop", (ctx) => {
     let message = ctx.update.message
     if (message.chat.id < 0) {
         let chatId = message.chat.id
-        OyunDurdurHusnuEhedov(ctx, chatId)
+        OyunDurdur(ctx, chatId)
     }
     else {
         ctx.reply("🛑 Bu komut gruplar için geçerli kuzum")
@@ -324,7 +324,7 @@ bot.command("top", (ctx) => {
 		let chat = getChat(chatId)
 		if (chat) {
 			let top = []
-			NesneYenileHusnuEhedov(chat.members, (memberId, member, memberIndex) => {
+			NesneYenile(chat.members, (memberId, member, memberIndex) => {
 				top.push({
 					firstName: member.firstName,
 					score: member.totalScore
@@ -340,7 +340,7 @@ bot.command("top", (ctx) => {
 				ctx.replyWithMarkdown(Degisken(`
 *✅ Grup En İyi TOP 20 Oyuncu:*
 
-${top.sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${["","",""][index] || ""} ${index + 1}) *${member.firstName}*: ${member.score} ${HusnuEhedov(member.score, "puan🎁", "puan🎁", "puan🎁")}`).join("\n")}
+${top.sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${["","",""][index] || ""} ${index + 1}) *${member.firstName}*: ${member.score} $(member.score, "puan🎁", "puan🎁", "puan🎁")}`).join("\n")}
 				`))
 			}
 			else {
@@ -370,7 +370,7 @@ bot.command("g", (ctx) => {
             for (let i in comments) {
                 let chatId = comments[i]
                 let chat = getChat(chatId)
-                NesneYenileHusnuEhedov(chat.members, (memberId, member, memberIndex) => {
+                NesneYenile(chat.members, (memberId, member, memberIndex) => {
                     top.push({
                         firstName: member.firstName,
                         score: member.totalScore
@@ -386,7 +386,7 @@ bot.command("g", (ctx) => {
             if (top.length > 0) {
                 ctx.replyWithHTML(Degisken(`
      <b>🎖Gruplar Üzre En İyi Top-20</b>\n
-${(top).sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${["🥇","🥈","🥉"][index] || "🎲"} ${index + 1}) <b><i>${member.firstName} → ${member.score} ${HusnuEhedov(member.score, "puan", "puan", "puan")}</i></b>`).join("\n")}
+${(top).sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${["🥇","🥈","🥉"][index] || "🎲"} ${index + 1}) <b><i>${member.firstName} → ${member.score} $(member.score, "puan", "puan", "puan")}</i></b>`).join("\n")}
                 `))
             }
         }
@@ -526,7 +526,7 @@ bot.on("message", async (ctx) => {
 				)
 			}
 			if (!chat.members[fromId]) { 
-				chat.members[fromId] = dbUserAlHusnuEhedov(firstName)
+				chat.members[fromId] = dbUserAl(firstName)
 			}
 			Object.assign(chat.members[fromId], {
 				isPlaying: true,
@@ -541,7 +541,7 @@ bot.on("message", async (ctx) => {
 				chatId,
 				oyunDurumuHusnuEhedov[chatId].guessMessageId,
 				null,
-				RaundMesajHusnuEhedov(chatId, oyunDurumuHusnuEhedov[chatId].currentRound, oyunDurumuHusnuEhedov[chatId].currentTime),
+				RaundMesaj(chatId, oyunDurumuHusnuEhedov[chatId].currentRound, oyunDurumu[chatId].currentTime),
 				{
 					parse_mode: "Markdown"
 				}
