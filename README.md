@@ -9,7 +9,7 @@
     <img src="img/tesla.png" alt="Logo" width="500" height="320">
   </a>
 
-  <h2 align="center"><a href="https://t.me/husnuehedov">🔍 myt game Proje Sahibleri: @meyitzade47&@duyguszadam</a></h2>
+  <h2 align="center"><a href="https://t.me/husnuehedov">🔍 Esila sohbet Proje Sahibi: @debubluman</a></h2>
 
   <p align="center">
     <b>Merhaba, mytgame Projesi ile Karşınızdayız. Bot 1 Yıldan Fazladır Telegram da Aktif Olarak<br/>Kullanıcılara Oyun Konusun da kolaylık Sağlıyor
