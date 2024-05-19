@@ -80,8 +80,8 @@ const OyunYaratHusnuEhedov = chatId => {
 }
 
 const ozelMesaj = isGroup => Degisken(`
-    *✅ Hoş Geldin,Ben MytGame Oyun Mağazası\nZamanınızı eğlenceli hale getirimek için Telegram oyun botuyum🤖*
-    ${isGroup ? "" : "\n*Temel komutların listesi için /yardim*"}
+    *✅ Hoş Geldin\n♥️😘*
+    ${isGroup ? "" : "\n*Temel komutların listesi için /help*"}
 `)
 
 
@@ -154,7 +154,7 @@ const OyunDurdurHusnuEhedov = (ctx, chatId) => {
 		}
 	}
 	else {
-		ctx.reply("🆘 Oyun başlamadı... 🙅🏻\nOyunu Başlat ➡️  /yas")
+		ctx.reply("🆘 Oyun başlamadı... 🙅🏻\nOyunu Başlat ➡️  /game")
 	}
 }
 const RaundMesajHusnuEhedov = (chatId, round, time) => {
@@ -245,7 +245,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 				)
 			}
 			else {
-				ctx.reply("Cevap verilmedi, Oyun Durduruldu❕")
+				ctx.reply("Cevap verilmedi, Oyun Durduruldu ama niden❕")
 				OyunDurdurHusnuEhedov(ctx, chatId)
 				return
 			}
@@ -280,7 +280,7 @@ bot.command("game", (ctx) => {
 		let chat = getChat(chatId)
 		if (chat) {
 			if (chat.isPlaying) {
-				return ctx.reply("❗️ Oyun şuan aktif, durdurmak için /stop.")
+				return ctx.reply("❗️ Oyun şuan aktif, durdurmak için /dur.")
 			}
 			else {
 				chat.isPlaying = true
@@ -298,7 +298,7 @@ bot.command("game", (ctx) => {
 		OyunHusnuEhedov(ctx, chatId)
 	}
 	else {
-		ctx.reply("🛑 Bu komut gruplar için geçerli")
+		ctx.reply("🛑 Bu komut gruplar için geçerli kuzum")
 	}
 })
 
@@ -311,7 +311,7 @@ bot.command("stop", (ctx) => {
         OyunDurdurHusnuEhedov(ctx, chatId)
     }
     else {
-        ctx.reply("🛑 Bu komut gruplar için geçerli")
+        ctx.reply("🛑 Bu komut gruplar için geçerli kuzum")
     }
 })
 
@@ -345,15 +345,15 @@ ${top.sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${[
 				`))
 			}
 			else {
-				ctx.reply("❗️ Bu grupta hiç oyun oynamadınız")
+				ctx.reply("❗️ benimle hiç oyun oynamadınız")
 			}
 		}
 		else {
-			ctx.reply("🛑 Bu komut gruplar için geçerli")
+			ctx.reply("🛑 Bu komut gruplar için geçerli kuzum")
 		}
 	}
 	else {
-		ctx.reply("🛑 Bu komut gruplar için geçerli")
+		ctx.reply("🛑 Bu komut gruplar için geçerli kuzum")
 	}
 })
 /// /// /// /// /// /// ///  <!-- GRUB KULLANICI RATING SON --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
