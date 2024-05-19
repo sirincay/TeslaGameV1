@@ -472,8 +472,8 @@ bot.action('Yardim', ctx=>{
     ctx.replyWithMarkdown(`*Destek Grupu 🏆*`,{
         reply_markup:{
             inline_keyboard:[
-                [{text:'1) Qrup ', url:'t.me/mytsahip'}],
-                [{text:'2) Qrup ', url:'t.me/HirasetTR'}],
+                [{text:'1) Qrup ', url:'t.me/sohbetqurulus'}],
+                [{text:'2) Qrup ', url:'t.me/sohbetqurulus'}],
                 [{text:'🔙 Geri', callback_data:'vip'}]
             ]
         }
