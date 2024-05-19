@@ -12,8 +12,8 @@
   <h2 align="center"><a href="https://t.me/husnuehedov">🔍 Esila sohbet Proje Sahibi: @debubluman</a></h2>
 
   <p align="center">
-    <b>Merhaba, mytgame Projesi ile Karşınızdayız. Bot 1 Yıldan Fazladır Telegram da Aktif Olarak<br/>Kullanıcılara Oyun Konusun da kolaylık Sağlıyor
-Şuan Kullanılan <a href="https://t.me/myt_game_bot" >@myt_game_bot</a>'un <br/>
+    <b>Merhaba, esilasohbet Projesi ile Karşınızdayız. Bot 1 Yıldan Fazladır Telegram da Aktif Olarak<br/>Kullanıcılara Oyun Konusun da kolaylık Sağlıyor
+Şuan Kullanılan <a href="https://t.me/EsilaChatBot" >@EsilaChatBot</a>'un <br/>
 Eski Alt Versiyon Projesi GitHub'da Kullanıcılara Açık Sunuldu.</b>
 <br/><br/>
 <strong><a href="https://telegra.ph/TeslaGame-Türkçe-Oyun-Rehberi-05-29">Dökümanı Okuyun</a></strong>
