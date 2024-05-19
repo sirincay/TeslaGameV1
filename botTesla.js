@@ -1,6 +1,5 @@
 ////////////////////////////////////////
 // Başka github hesabına yükləməy olmaz
-// Reponu öz adına çıxaran peysərdi...!!!
 
 
 require("dotenv").config();
@@ -245,7 +244,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 				)
 			}
 			else {
-				ctx.reply("Cevap verilmedi, Oyun Durduruldu ama niden❕")
+				ctx.reply("kendimi yırtıyorum burada, sen benimle oynamak istemiyorsun🥺❕")
 				OyunDurdurHusnuEhedov(ctx, chatId)
 				return
 			}
@@ -399,7 +398,7 @@ ${(top).sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `$
 
 bot.command("yardim", (ctx) => {
     return ctx.replyWithMarkdown(Degisken(`
-        *Merhaba! "Tahimin" oyunu için\noluşturulmuş bir botum🤖*\n🆘*Bot yalnızca gruplar için tasarlanmıştır!*\n\n_ℹ️Kurallar budur : Sana resimler atıyorum ve sen kategoriye uyğun rakamlarla tahmin etmelisin🕵🏼‍♂️,İlk olarak qrupa ekle ve Grupda medya izini açık olsun unutma! veya Botu yönetici yapın_🗣\n_Sonra Komutlarla ile oyunu başladın_🎯\n
+        *aşko komutlar bunlar *\n🆘*😘\n\n_ℹ️Kurallar budur : Sana resimler atıyorum ve sen kategoriye uyğun rakamlarla tahmin etmelisin🕵🏼‍♂️,İlk olarak qrupa ekle ve Grupda medya izini açık olsun unutma! veya Botu yönetici yapın_🗣\n_Sonra Komutlarla ile oyunu başladın_🎯\n
           *Temel Komutların Listesi👇🏻*\n\n🎲 /yas - _Oyunu Başlat_\n⛔️ /stop - _Oyunu durdurmak_\n📊 /top - _Oyuncuların puanı gösterir_\n_🌍 /g - Global Puanlar_\nℹ️ /yardim - _Size yardım edicek_\n👤 /kullanici - _Kullanıcı hakkında bilgi_\n🆔 /id - _Grup infosu_`))
 })
 
@@ -459,8 +458,8 @@ bot.action('vip', ctx=>{
     ctx.replyWithMarkdown(`*🌍 Sahibler*`,{
         reply_markup:{
             inline_keyboard:[
-                [{text:'🇦🇿 @meyitzade47', callback_data:'meyitzade'}],
-                [{text:'🇹🇷 @duyguszadam', callback_data:'Emirbozan'}],
+                [{text:'🇦🇿 @debubluman', callback_data:'aşkom'}],
+                [{text:'🇹🇷 @emirmiydio', callback_data:'canım'}],
                 [{text:'🔙 Geri', callback_data:'start'}]
             ]
         }
@@ -489,8 +488,8 @@ bot.action('Yardim', ctx=>{
         `,{
         reply_markup:{
             inline_keyboard:[
-                [{text:'1) Grub', url:'t.me/mytsahip'}],
-                [{text:'2) Grub', url:'t.me/HirasetTR'}],
+                [{text:'1) Grub', url:'t.me/sohbetqurulus'}],
+                [{text:'2) Sahibi', url:'t.me/debubluman'}],
                 [{text:'🔙 Geri', callback_data:'vip'}]
             ]
         }
