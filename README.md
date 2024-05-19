@@ -73,7 +73,7 @@ Tüm hakları saklıdır!
 
 ## İletişim
 
-Telegram- [@meyitzade47](https://t.me/duyguszadam)
+Telegram- (debubluman)
 
 Project Link: [https://github.com/john930john/gamev1](https://github.com/john930john/gamev1)
 
