@@ -1,1 +1,1 @@
-worker: node botEsila.js
+
