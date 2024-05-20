@@ -2,7 +2,7 @@
   "name": "Esilasohbet",
   "version": "1.0.0",
   "description": "NodeJS ve Telegraf kütübhanesi kullanılarak yapılmış basit yaş tahmin oyun botu",
-  "main": "botTesla.js",
+  "main": "@EsilaChatBot.js",
   "dependencies": {
     "debug": "^4.1.1",
     "dotenv": "^16.0.1",
