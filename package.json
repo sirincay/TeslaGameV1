@@ -1,5 +1,5 @@
 {
-  "name": "teslagame",
+  "name": "Esilasohbet",
   "version": "1.0.0",
   "description": "NodeJS ve Telegraf kütübhanesi kullanılarak yapılmış basit yaş tahmin oyun botu",
   "main": "botTesla.js",
@@ -21,12 +21,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "husnuehedov",
+    "EmirBozan",
     "tahmin",
     "telegram",
     "bot",
     "oyun"
   ],
-  "author": "t.me/HusnuEhedov",
+  "author": "t.me/debubluman",
   "license": "ISC"
 }
