@@ -547,16 +547,8 @@ bot.on("message", async (ctx) => {
 			)
 		}
 		else if (message.new_chat_member && message.new_chat_member.id === process.env.ID_BOT) { /// Bot Yeni Qruba Eklendi Mesaj
-			ctx.replyWithMarkdown(ozelMesaj(true))
+			ctx.replyWithMarkdown(ozelMesaj(False))
 		}
 	}
 })
 
-
-// Botun nickname alan kod
-bot.telegram.getMe().then(botInfo => {
-    bot.options.username = botInfo.username
-    console.log(`Sistem Aktifleşti => ${bot.options.username}`)
-})
-
-bot.launch();
