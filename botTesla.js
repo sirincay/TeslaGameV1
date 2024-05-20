@@ -79,12 +79,11 @@ const OyunYarat = chatId => {
 }
 
 const ozelMesaj = isGroup => Degisken(`
-    *✅ Hoş Geldin\n♥️😘*
-    ${isGroup ? "" : "\n*Temel komutların listesi için /help*"}
+     \nHoş Geldin♥️😘*
+    ${isGroup : "\n*Temel komutların listesi için /help*"}
 `)
 
 
-const YasOyunBaslat = () => {  // OYUN RESİM ALMASI GEREK DOSYA KONUM 
 	let imagePath = "./resimler"
 	let fimeName = randomResim(fs.readdirSync(imagePath))
 	let age = Number(fimeName.match(/^(\d+)/)[1])
