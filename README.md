@@ -24,7 +24,7 @@ Eski Alt Versiyon Projesi GitHub'da Kullanıcılara Açık Sunuldu.</b>
 
 ### 🔹 Kolay Heroku Kurulum
   
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sirincay/TeslaGameV1)  
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=/https://github.com/john930john/gamev1)  
  <i>Deploy Sonrası Yapılması Gerekenler:</i><br/>
       <i>web npm start butonu kapatın</i><br/>
      <img src="img/heroku1.jpg" alt="heroku" width="200" height="150"><br/>
@@ -36,7 +36,7 @@ Eski Alt Versiyon Projesi GitHub'da Kullanıcılara Açık Sunuldu.</b>
 1. Reponu Klonlayın
    ```sh
    git clone https://github.com/john930john/gamev1
-   cd TeslaGameV1
+   cd GameV1
    ```
 2. Telegraf,Environment Paketleri İndirin
    ```sh 
