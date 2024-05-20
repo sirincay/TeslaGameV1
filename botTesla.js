@@ -553,11 +553,6 @@ bot.on("message", async (ctx) => {
 })
 
 
-// Olumsuz Hata versede çalışmaya devam eder
-bot.catch((err) => {
-    console.log('Error: ', err)
-})
-
 // Botun nickname alan kod
 bot.telegram.getMe().then(botInfo => {
     bot.options.username = botInfo.username
