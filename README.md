@@ -18,7 +18,7 @@ Eski Alt Versiyon Projesi GitHub'da Kullanıcılara Açık Sunuldu.</b>
 <br/><br/>
 <strong><a href="https://telegra.ph/TeslaGame-Türkçe-Oyun-Rehberi-05-29">Dökümanı Okuyun</a></strong>
     ·
-    <strong><a href="https://t.me/husnuehedov">Hata Bildir</a></strong>
+    <strong><a href="https://t.me/HusnuTech">Hata Bildir</a></strong>
    </p>
 </div>
 
@@ -73,7 +73,7 @@ Tüm hakları saklıdır!
 
 ## İletişim
 
-Telegram- [@HusnuEhedov](https://t.me/insidecore)
+Telegram- [@HusnuTech](https://t.me/husnutech)
 
 Project Link: [https://github.com/sirincay/TeslaGameV1](https://github.com/sirincay/TeslaGameV1)
 
